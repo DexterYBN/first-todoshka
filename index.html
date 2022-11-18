@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+            background: url(https://cdnb.artstation.com/p/assets/images/images/019/170/273/large/ford-nguyen-city-street.jpg?1562315890)
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        let title = document.createElement("h1")
+        title.innerText = "Too doo shka"
+        title.style.color = "#112D4E"
+
+        let ul = document.createElement("ul")
+        ul.style.display = "flex"
+        ul.style.justifyContent = "center"
+        ul.style.flexDirection = "column"
+        ul.style.borderRadius = "10px"
+        ul.style.backgroundColor = "#DBE2EF"
+        ul.style.listStyleType = "none"
+        ul.style.margin = "auto"
+        ul.style.width = "490px"
+
+        let form = document.createElement("form")
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            let li = document.createElement("li")
+            li.textContent = input.value
+            li.style.paddingTop = "5px"
+            li.style.display = "flex"
+            li.style.justifyContent = "space-between"
+            li.style.alignItems = "center"
+            ul.prepend(li)
+            desktop.append(ul)
+            input.value = ""
+
+            let dlt = document.createElement("button")
+            dlt.style.border = "none"
+            dlt.style.backgroundColor = "#DBE2EF"
+            dlt.style.color = "brown"
+            dlt.style.textAlign = "center"
+            dlt.textContent = "Delete"
+            dlt.addEventListener("click", (e) => {
+                e.target.parentElement.remove()
+            })
+
+            li.append(dlt)
+        })
+
+        let input = document.createElement("input")
+        input.style.border = "1px solid #B1B1B1"
+        input.style.backgroundColor = "#DBE2EF"
+        input.style.width = "250px"
+        input.style.height = "32px"
+        input.style.borderRadius = "5px 0 0 5px"
+        input.placeholder = "  some todo"
+
+        let desktop = document.createElement("div")
+
+        desktop.style.textAlign = "center"
+        desktop.style.opacity = "0.7"
+        desktop.style.width = "600px"
+        desktop.style.height = "700px"
+        desktop.style.borderRadius = "20px"
+        desktop.style.margin = "auto"
+        desktop.style.backgroundColor = "#F9F7F7"
+        desktop.style.border = "1px solid black"
+
+        let btn = document.createElement("button")
+        btn.style.backgroundColor = "#3F72AF"
+        btn.style.border = "1px solid #3F72AF"
+        btn.style.borderRadius = "0 5px 5px 0"
+        btn.style.width = "60px"
+        btn.style.height = "36px"
+        btn.textContent = "+"
+        btn.type = "submit"
+        btn.addEventListener('click', () => { })
+
+        let hr = document.createElement("hr")
+        hr.style.width = "500px"
+
+        let dltAll = document.createElement("button")
+        dltAll.style.border = "none"
+        dltAll.style.color = "red"
+        dltAll.style.backgroundColor = "#DBE2EF"
+        dltAll.style.borderRadius = "10px"
+        dltAll.style.textAlign = "center"
+        dltAll.textContent = "Delete All Todo's"
+        dltAll.addEventListener("click", (e) => {
+            e.target.parentElement.remove()
+        })
+
+        ul.appendChild(dltAll)
+        form.append(btn)
+        form.prepend(input)
+        desktop.append(hr)
+        desktop.prepend(form)
+        desktop.prepend(title)
+        document.body.prepend(desktop)
+
+    </script>
+</body>
+
+</html>
