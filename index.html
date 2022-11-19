@@ -35,6 +35,10 @@
         form.addEventListener("submit", (e) => {
             e.preventDefault()
 
+            if (input.value === "") {
+                return input.value
+            }
+
             let li = document.createElement("li")
             li.textContent = input.value
             li.style.paddingTop = "5px"
@@ -43,7 +47,6 @@
             li.style.alignItems = "center"
             ul.prepend(li)
             desktop.append(ul)
-            input.value = ""
 
             let dlt = document.createElement("button")
             dlt.style.border = "none"
@@ -65,6 +68,8 @@
         input.style.height = "32px"
         input.style.borderRadius = "5px 0 0 5px"
         input.placeholder = "  some todo"
+        input.value = ""
+
 
         let desktop = document.createElement("div")
 
@@ -100,7 +105,7 @@
         dltAll.addEventListener("click", (e) => {
             e.target.parentElement.remove()
         })
-
+        
         ul.appendChild(dltAll)
         form.append(btn)
         form.prepend(input)
